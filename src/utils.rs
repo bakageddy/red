@@ -3,6 +3,13 @@ use std::{process::exit, io::{Stdout, stdout}};
 use ratatui::{Terminal, backend::CrosstermBackend};
 use crossterm::{ExecutableCommand, terminal::{EnterAlternateScreen, enable_raw_mode, disable_raw_mode, LeaveAlternateScreen}};
 
+pub fn usage() {
+    let msg = r#"
+red <file>:         read file
+    "#;
+    println!("{}", msg);
+}
+
 pub fn errndie(msg: &str, st_code: i32) -> () {
     eprintln!("{msg}");
     exit(st_code);
